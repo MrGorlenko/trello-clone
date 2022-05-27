@@ -1,16 +1,18 @@
 import React from "react";
+import InputWithButton from "./subcomponents/InputWithButton";
 
 function CreateBoard(props) {
   return (
     <form onSubmit={props.submitHandler} className="createBoard">
       <p>Create your new board here:</p>
-      <input
-        type="text"
+      <InputWithButton
         placeholder="new board"
-        onChange={props.changeHandler}
+        buttonText="add new board"
+        changeHandler={props.changeHandler}
         value={props.value}
+        keyDownHandler={props.submitHandler}
+        data={[]}
       />
-      <input type="submit" value="add new board" />
     </form>
   );
 }

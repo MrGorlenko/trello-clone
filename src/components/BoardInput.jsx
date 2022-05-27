@@ -1,4 +1,5 @@
 import React from "react";
+import InputWithButton from "./subcomponents/InputWithButton";
 
 function BoardInput(props) {
   return (
@@ -7,19 +8,17 @@ function BoardInput(props) {
         props.inputVisibility ? "input_visible" : "input_hidden"
       } input_board`}
     >
-      <input
-        type="text"
-        placeholder="add task"
-        onChange={props.newTaskHandler}
-        value={props.newTaskValue}
-      />
-      <button
-        onClick={(event) =>
-          props.addTaskHandler(event, props.id, props.newTaskValue)
-        }
-      >
-        add task
-      </button>
+      <form onSubmit={props.addTaskHandler} action="">
+        <InputWithButton
+          buttonText="add task"
+          placeholder="add task"
+          changeHandler={props.newTaskHandler}
+          value={props.newTaskValue}
+          keyDownHandler={props.addTaskHandler}
+          pushButtonHandler={props.addTaskHandler}
+          data={[props.id, props.newTaskValue]}
+        />
+      </form>
     </div>
   );
 }

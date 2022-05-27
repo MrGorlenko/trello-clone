@@ -23,6 +23,7 @@ function Board(props) {
   }
 
   function addTaskHandler(event, id, value) {
+    event.preventDefault();
     setNewTaskValue("");
     props.addTaskHandler(event, id, value);
   }
@@ -37,9 +38,9 @@ function Board(props) {
       <BoardInput
         id={props.id}
         inputVisibility={inputVisibility}
+        newTaskValue={newTaskValue}
         addTaskHandler={addTaskHandler}
         newTaskHandler={newTaskHandler}
-        newTaskValue={newTaskValue}
       />
       <div
         className="content"

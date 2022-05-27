@@ -36,6 +36,9 @@ body {
   height: 20px;
   text-align: center;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input_hidden {

@@ -33,7 +33,9 @@ function App() {
   function addTaskHandler(event, id, newTaskValue) {
     const newBoardArray = boards.map((board) => {
       if (board.id === id) {
-        board.tasks.push(newTaskValue);
+        if (board.tasks.indexOf(newTaskValue) === -1)
+          board.tasks.push(newTaskValue);
+        else alert("you have such task!");
       }
       return board;
     });
