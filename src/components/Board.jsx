@@ -4,7 +4,7 @@ import BoardInput from "./BoardInput";
 
 function Board(props) {
   const [inputVisibility, setInputVisibility] = useState(false);
-  const [newTaskValue, setNewTaskValue] = useState(null);
+  const [newTaskValue, setNewTaskValue] = useState("");
 
   function handleBoardTopClick() {
     setInputVisibility(!inputVisibility);

@@ -1,6 +1,6 @@
 import React from "react";
-import InputWithButton from "./subcomponents/InputWithButton";
-
+import Input from "./Input";
+import Button from "./Button";
 function BoardInput(props) {
   return (
     <div
@@ -9,14 +9,17 @@ function BoardInput(props) {
       } input_board`}
     >
       <form onSubmit={props.addTaskHandler} action="">
-        <InputWithButton
-          buttonText="add task"
+        <Input
           placeholder="add task"
           changeHandler={props.newTaskHandler}
           value={props.newTaskValue}
           keyDownHandler={props.addTaskHandler}
-          pushButtonHandler={props.addTaskHandler}
           data={[props.id, props.newTaskValue]}
+        />
+        <Button
+          buttonText="add task"
+          data={[props.id, props.newTaskValue]}
+          pushButtonHandler={props.addTaskHandler}
         />
       </form>
     </div>
